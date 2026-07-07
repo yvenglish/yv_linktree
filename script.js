@@ -45,3 +45,14 @@ if (nextBtn) {
     updateTabs(currentTabIndex);
   });
 }
+
+// Preloader Logic
+document.addEventListener("DOMContentLoaded", () => {
+  const preloader = document.getElementById("preloader");
+  if (preloader) {
+    setTimeout(() => {
+      preloader.classList.add("hidden");
+      document.body.classList.remove("no-scroll");
+    }, 3500);
+  }
+});
