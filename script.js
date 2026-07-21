@@ -58,11 +58,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Smart Nav Logic
   const nav = document.querySelector('.smart-nav');
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  }
+
   if (nav) {
     let lastScrollY = window.scrollY;
     window.addEventListener('scroll', () => {
       if (window.scrollY > lastScrollY && window.scrollY > 100) {
         nav.classList.add('hidden'); // Scroll Down
+        if(navLinks) navLinks.classList.remove('active'); // Close menu on scroll down
       } else {
         nav.classList.remove('hidden'); // Scroll Up
       }
