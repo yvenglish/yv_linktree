@@ -1,0 +1,105 @@
+
+/* NOVO HERO - REDESIGN */
+.hero-new {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--cream);
+  overflow: hidden;
+  padding: 100px 20px 60px;
+}
+
+.hero-new-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55%;
+  height: 100%;
+  background-image: url('assets/mulherDia.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.hero-new-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, var(--cream) 0%, rgba(247,244,240,0.85) 30%, transparent 100%);
+}
+
+.hero-new-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.hero-new-content {
+  max-width: 650px;
+}
+
+.hero-new-logo {
+  width: 80px;
+  margin-bottom: 30px;
+  border-radius: 50%;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.hero-new h1 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--purple);
+  margin-bottom: 24px;
+}
+
+.hero-new h1 span {
+  display: block;
+  font-style: italic;
+  color: #7b6a8a;
+}
+
+.hero-new-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-new-list li {
+  font-size: 1.1rem;
+  color: #4a3b52;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  line-height: 1.5;
+}
+
+.hero-new-list .check {
+  color: var(--orange-2);
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 920px) {
+  .hero-new {
+    align-items: flex-start;
+    padding-top: 110px;
+    background: var(--cream);
+  }
+  .hero-new-bg {
+    width: 100%;
+    opacity: 0.15;
+    background-position: center right;
+  }
+  .hero-new-overlay {
+    background: linear-gradient(to bottom, var(--cream) 0%, rgba(247,244,240,0.8) 50%, var(--cream) 100%);
+  }
+  .hero-new h1 {
+    font-size: 2.1rem;
+  }
+  .hero-new-logo {
+    width: 65px;
+  }
+}
