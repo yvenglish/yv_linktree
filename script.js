@@ -238,6 +238,7 @@ function applySiteLang(lang) {
   });
 
   updateWhatsAppLinks();
+  updateFormLinks();
   store.set('yv-lang', siteLang);
 }
 
@@ -254,6 +255,14 @@ function applyPlanLang(lang) {
   });
   document.getElementById('planos').classList.toggle('theme-es', planLang === 'es');
   updateWhatsAppLinks();
+}
+
+/* ---------- Formulário de diagnóstico: abre no mesmo idioma do site ---------- */
+const FORM_URL = 'https://yvenglish.github.io/yv_novo_aluno_form/';
+function updateFormLinks() {
+  document.querySelectorAll(`a[href^="${FORM_URL}"]`).forEach((a) => {
+    a.href = siteLang === 'es' ? `${FORM_URL}?lang=es` : FORM_URL;
+  });
 }
 
 /* ---------- WhatsApp ---------- */
