@@ -376,3 +376,64 @@ h1 em,h2 em{font-style:italic;font-weight:600;color:var(--orange-2)}
   .wa-float{width:52px;height:52px;right:16px;bottom:16px;transition:bottom .3s ease,transform .25s}
   body.sticky-on .wa-float{bottom:88px}
 }
+
+/* =========================================================
+   Paleta do Espanhol
+   ========================================================= */
+:root{
+  --es-bg:#210E16;        /* vinho bem escuro */
+  --es-bg-2:#351526;      /* ameixa quente */
+  --es-card:#2B1823;      /* berinjela terrosa */
+  --es-main:#D96745;      /* terracota */
+  --es-accent:#F09A4A;    /* laranja queimado */
+  --es-soft:#D98B7C;      /* rosa argila */
+  --es-yv:#8B5A9E;        /* roxo quente */
+  --es-cream:#FFF7ED;     /* creme */
+  --es-text:#FFF9F2;      /* marfim */
+  --es-muted:#CDB8B3;     /* bege rosado */
+}
+
+/* Selo do hero */
+.chip-es .dot{background:var(--es-main)}
+
+/* Card de idioma */
+.lang-es{background:linear-gradient(150deg,var(--es-bg-2) 0%,var(--es-bg) 100%);color:var(--es-text)}
+.lang-es:after{background:radial-gradient(circle,var(--es-main),transparent 70%);opacity:.45}
+.lang-es .tag{background:rgba(217,103,69,.18);color:var(--es-accent)}
+.lang-es p{color:var(--es-muted);opacity:1}
+.lang-es .checks li:before{background:rgba(217,103,69,.22);color:var(--es-accent)}
+.lang-es .btn{background:var(--es-main);color:var(--es-text);border-color:transparent}
+.lang-es .btn:hover{background:var(--es-accent)}
+
+/* Seção de planos com a aba Espanhol ativa */
+.plans{transition:background .4s ease}
+.plans.theme-es{background:linear-gradient(150deg,var(--es-bg-2) 0%,var(--es-bg) 100%)}
+.plans.theme-es .label.orange,
+.plans.theme-es h2 em,
+.plans.theme-es .scarcity strong{color:var(--es-accent)}
+.plans.theme-es .head p,
+.plans.theme-es .scarcity,
+.plans.theme-es .plans-help{color:var(--es-muted)}
+.plans.theme-es .plans-help a{color:var(--es-accent);border-bottom-color:rgba(240,154,74,.4)}
+.plans.theme-es .plan-lang{background:rgba(255,249,242,.05);border-color:rgba(205,184,179,.2)}
+.plans.theme-es .plan-lang button{color:var(--es-muted)}
+.plans.theme-es .plan-lang button.active{background:var(--es-main);color:var(--es-text)}
+
+.plans.theme-es .plan{background:var(--es-card);border-color:rgba(205,184,179,.16);color:var(--es-text)}
+.plans.theme-es .plan-for{color:var(--es-muted)}
+.plans.theme-es .freq{background:rgba(139,90,158,.4);color:var(--es-text)}
+.plans.theme-es .feats{border-top-color:rgba(205,184,179,.16)}
+.plans.theme-es .feats li{color:var(--es-text)}
+.plans.theme-es .feats li:before{color:var(--es-accent)}
+.plans.theme-es .plan .btn-light{background:transparent;color:var(--es-text);border-color:var(--es-soft)}
+.plans.theme-es .plan .btn-light:hover{background:rgba(217,139,124,.12)}
+.plans.theme-es .badge{background:var(--es-main)}
+
+.plans.theme-es .plan-main{background:var(--es-cream);color:var(--es-bg);border-color:var(--es-main)}
+.plans.theme-es .plan-main .plan-for{color:#7a5a5e}
+.plans.theme-es .plan-main .freq{background:var(--es-bg-2);color:var(--es-text)}
+.plans.theme-es .plan-main .feats{border-top-color:rgba(33,14,22,.1)}
+.plans.theme-es .plan-main .feats li{color:var(--es-bg)}
+.plans.theme-es .plan-main .feats li:before{color:var(--es-main)}
+.plans.theme-es .plan-main .btn-primary{background:var(--es-main);color:var(--es-text);box-shadow:0 14px 34px rgba(217,103,69,.35)}
+.plans.theme-es .plan-main .btn-primary:hover{background:#c55a3a}

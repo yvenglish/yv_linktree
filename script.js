@@ -252,6 +252,7 @@ function applyPlanLang(lang) {
   document.querySelectorAll('[data-plans]').forEach((grid) => {
     grid.hidden = grid.dataset.plans !== planLang;
   });
+  document.getElementById('planos').classList.toggle('theme-es', planLang === 'es');
   updateWhatsAppLinks();
 }
 
