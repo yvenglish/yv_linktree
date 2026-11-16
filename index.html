@@ -56,7 +56,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=5" />
+  <link rel="stylesheet" href="style.css?v=7" />
 </head>
 <body>
 
@@ -93,6 +93,19 @@
   <header class="hero" id="topo">
     <div class="container hero-grid">
       <div class="hero-copy">
+        <a href="#planos" class="bf-hero bf-only">
+          <span class="bf-hero-tag">Black Friday</span>
+          <span class="bf-hero-text">
+            <strong data-i18n="bf.hero.title">Economize até R$ 480 por ano</strong>
+            <small data-i18n="bf.hero.sub">Desconto garantido enquanto você estudar com a gente · matrículas até 30/11</small>
+          </span>
+          <span class="countdown" data-countdown aria-label="Tempo restante da Black Friday">
+            <span><b data-cd="d">00</b><small data-i18n="bf.d">dias</small></span>
+            <span><b data-cd="h">00</b><small data-i18n="bf.h">horas</small></span>
+            <span><b data-cd="m">00</b><small data-i18n="bf.m">min</small></span>
+            <span><b data-cd="s">00</b><small data-i18n="bf.s">seg</small></span>
+          </span>
+        </a>
         <span class="pill" data-i18n="hero.eyebrow">Aulas particulares ao vivo · Inglês e Espanhol</span>
         <h1 data-i18n="hero.title">Pare de travar.<br><em>Comece a falar.</em></h1>
         <p class="hero-sub" data-i18n="hero.sub">Aulas particulares com a Yasmin, um plano feito para o seu objetivo e acompanhamento de verdade entre uma aula e outra. Sem decoreba, sem estudar sozinho.</p>
@@ -365,13 +378,25 @@
           <button type="button" role="tab" data-plan-lang="es" aria-selected="false" data-i18n="plans.tab.es">Espanhol</button>
         </div>
 
+        <div class="bf-plans bf-only">
+          <p data-i18n="bf.plans">🖤 <strong>Black Friday YV:</strong> matricule-se até 30 de novembro e mantenha este preço enquanto estudar com a gente.</p>
+          <span class="countdown countdown-sm" data-countdown>
+            <span><b data-cd="d">00</b><small data-i18n="bf.d">dias</small></span>
+            <span><b data-cd="h">00</b><small data-i18n="bf.h">horas</small></span>
+            <span><b data-cd="m">00</b><small data-i18n="bf.m">min</small></span>
+            <span><b data-cd="s">00</b><small data-i18n="bf.s">seg</small></span>
+          </span>
+        </div>
+
         <p class="scarcity" data-i18n="plans.scarcity">📅 <strong>Agenda limitada:</strong> por serem aulas particulares, os horários são preenchidos por ordem de inscrição.</p>
 
         <div class="plans-grid" data-plans="en">
           <article class="plan" data-plan="foundation">
             <h3>Foundation</h3>
             <p class="plan-for" data-i18n="plans.foundation.for">Para quem está começando e quer aprender com leveza e consistência.</p>
-            <p class="price"><span class="cur">R$</span><strong data-price>220</strong><span class="per" data-i18n="plans.per">/mês</span></p>
+            <p class="price-old bf-only"><span class="bf-tag">Black Friday</span><s>R$ 220</s><span class="save">−R$ 20</span></p>
+            <p class="price"><span class="cur">R$</span><strong data-regular="220" data-bf="200">200</strong><span class="per" data-i18n="plans.per">/mês</span></p>
+            <p class="bf-year bf-only" data-year="240"></p>
             <p class="freq" data-i18n="plans.foundation.freq">1 hora por semana</p>
             <a class="btn btn-light btn-block" data-plan-cta href="https://yvenglish.github.io/yv_novo_aluno_form/" target="_blank" rel="noopener" data-i18n="plans.foundation.cta">Quero o Foundation</a>
             <ul class="feats">
@@ -391,7 +416,9 @@
             <span class="badge" data-i18n="plans.popular">Mais escolhido</span>
             <h3>Fluency</h3>
             <p class="plan-for" data-i18n="plans.fluency.for">Para quem quer evoluir com consistência e transformar o idioma em algo natural.</p>
-            <p class="price"><span class="cur">R$</span><strong data-price>420</strong><span class="per" data-i18n="plans.per">/mês</span></p>
+            <p class="price-old bf-only"><span class="bf-tag">Black Friday</span><s>R$ 420</s><span class="save">−R$ 40</span></p>
+            <p class="price"><span class="cur">R$</span><strong data-regular="420" data-bf="380">380</strong><span class="per" data-i18n="plans.per">/mês</span></p>
+            <p class="bf-year bf-only" data-year="480"></p>
             <p class="freq" data-i18n="plans.fluency.freq">2 horas por semana</p>
             <a class="btn btn-primary btn-block" data-plan-cta href="https://yvenglish.github.io/yv_novo_aluno_form/" target="_blank" rel="noopener" data-i18n="plans.fluency.cta">Quero o Fluency</a>
             <ul class="feats">
@@ -411,7 +438,9 @@
             <span class="badge badge-soft" data-i18n="plans.intensive">Intensivo</span>
             <h3>Performance</h3>
             <p class="plan-for" data-i18n="plans.performance.for">Para quem tem pressa ou um objetivo próximo e quer fazer do idioma uma vantagem.</p>
-            <p class="price"><span class="cur">R$</span><strong data-price>620</strong><span class="per" data-i18n="plans.per">/mês</span></p>
+            <p class="price-old bf-only"><span class="bf-tag">Black Friday</span><s>R$ 620</s><span class="save">−R$ 40</span></p>
+            <p class="price"><span class="cur">R$</span><strong data-regular="620" data-bf="580">580</strong><span class="per" data-i18n="plans.per">/mês</span></p>
+            <p class="bf-year bf-only" data-year="480"></p>
             <p class="freq" data-i18n="plans.performance.freq">3 horas por semana</p>
             <a class="btn btn-light btn-block" data-plan-cta href="https://yvenglish.github.io/yv_novo_aluno_form/" target="_blank" rel="noopener" data-i18n="plans.performance.cta">Quero o Performance</a>
             <ul class="feats">
@@ -433,7 +462,9 @@
           <article class="plan" data-plan="esencial">
             <h3>Esencial</h3>
             <p class="plan-for" data-i18n="plans.es1.for">Para começar o espanhol com leveza, no seu ritmo.</p>
-            <p class="price"><span class="cur">R$</span><strong>150</strong><span class="per" data-i18n="plans.per">/mês</span></p>
+            <p class="price-old bf-only"><span class="bf-tag">Black Friday</span><s>R$ 160</s><span class="save">−R$ 15</span></p>
+            <p class="price"><span class="cur">R$</span><strong data-regular="160" data-bf="145">145</strong><span class="per" data-i18n="plans.per">/mês</span></p>
+            <p class="bf-year bf-only" data-year="180"></p>
             <p class="freq" data-i18n="plans.es1.freq">1 aula por semana</p>
             <a class="btn btn-light btn-block" data-plan-cta href="https://yvenglish.github.io/yv_novo_aluno_form/" target="_blank" rel="noopener" data-i18n="plans.es1.cta">Quero o Esencial</a>
             <ul class="feats">
@@ -447,7 +478,9 @@
             <span class="badge" data-i18n="plans.best">Evolução mais rápida</span>
             <h3>Fluidez</h3>
             <p class="plan-for" data-i18n="plans.es2.for">Para evoluir com consistência e começar a conversar mais rápido.</p>
-            <p class="price"><span class="cur">R$</span><strong>300</strong><span class="per" data-i18n="plans.per">/mês</span></p>
+            <p class="price-old bf-only"><span class="bf-tag">Black Friday</span><s>R$ 300</s><span class="save">−R$ 20</span></p>
+            <p class="price"><span class="cur">R$</span><strong data-regular="300" data-bf="280">280</strong><span class="per" data-i18n="plans.per">/mês</span></p>
+            <p class="bf-year bf-only" data-year="240"></p>
             <p class="freq" data-i18n="plans.es2.freq">2 aulas por semana</p>
             <a class="btn btn-primary btn-block" data-plan-cta href="https://yvenglish.github.io/yv_novo_aluno_form/" target="_blank" rel="noopener" data-i18n="plans.es2.cta">Quero o Fluidez</a>
             <ul class="feats">
@@ -561,6 +594,6 @@
     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
   </a>
 
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=8"></script>
 </body>
 </html>

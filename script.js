@@ -121,6 +121,14 @@ const ES = {
   'plans.tab.es': 'Español',
   'plans.scarcity': '📅 <strong>Agenda limitada:</strong> al ser clases particulares, los horarios se llenan por orden de inscripción.',
   'plans.per': '/mes',
+
+  'bf.hero.title': 'Ahorra hasta R$ 480 al año',
+  'bf.hero.sub': 'Descuento garantizado mientras estudies con nosotros · inscripciones hasta el 30/11',
+  'bf.plans': '🖤 <strong>Black Friday YV:</strong> inscríbete hasta el 30 de noviembre y mantén este precio mientras estudies con nosotros.',
+  'bf.d': 'días',
+  'bf.h': 'horas',
+  'bf.m': 'min',
+  'bf.s': 'seg',
   'plans.popular': 'Más elegido',
   'plans.intensive': 'Intensivo',
   'plans.best': 'Avance más rápido',
@@ -194,13 +202,55 @@ const ES = {
 const WA_TEXT = {
   pt: {
     general: 'Olá! Vim pelo site e gostaria de tirar uma dúvida sobre as aulas.',
-    plan: (plan, lang) => `Olá! Vim pelo site e tenho interesse no plano ${plan} de ${lang === 'es' ? 'espanhol' : 'inglês'}.`,
+    plan: (plan, lang) => `Olá! Vim pelo site e tenho interesse no plano ${plan} de ${lang === 'es' ? 'espanhol' : 'inglês'}${isBlackFriday() ? ' com o preço de Black Friday' : ''}.`,
   },
   es: {
     general: '¡Hola! Vengo del sitio web y me gustaría resolver una duda sobre las clases.',
-    plan: (plan, lang) => `¡Hola! Vengo del sitio web y me interesa el plan ${plan} de ${lang === 'es' ? 'español' : 'inglés'}.`,
+    plan: (plan, lang) => `¡Hola! Vengo del sitio web y me interesa el plan ${plan} de ${lang === 'es' ? 'español' : 'inglés'}${isBlackFriday() ? ' con el precio de Black Friday' : ''}.`,
   },
 };
+
+/* ---------- Black Friday ----------
+   Até o fim de 30/11/2026 (horário de Brasília) os planos mostram o preço promocional,
+   o preço antigo riscado e a contagem regressiva. Depois disso tudo some sozinho
+   e os preços normais (data-regular) voltam — não precisa mexer no site. */
+const BLACK_FRIDAY_END = new Date('2026-11-30T23:59:59-03:00').getTime();
+const isBlackFriday = () => Date.now() <= BLACK_FRIDAY_END;
+
+function applyBlackFriday() {
+  const on = isBlackFriday();
+  document.body.classList.toggle('bf-off', !on);
+  document.querySelectorAll('[data-bf]').forEach((el) => {
+    el.textContent = on ? el.dataset.bf : el.dataset.regular;
+  });
+  return on;
+}
+
+// "R$ 480 a menos por ano" embaixo do preço de cada plano (vale enquanto a pessoa for aluna)
+function updateYearlySavings() {
+  document.querySelectorAll('[data-year]').forEach((el) => {
+    const v = `R$ ${el.dataset.year}`;
+    el.innerHTML = siteLang === 'es'
+      ? `💸 <strong>${v} menos al año</strong> mientras sigas estudiando`
+      : `💸 <strong>${v} a menos por ano</strong> enquanto você estudar`;
+  });
+}
+
+function startCountdown() {
+  const boxes = document.querySelectorAll('[data-countdown]');
+  const pad = (n) => String(n).padStart(2, '0');
+  const tick = () => {
+    const left = Math.max(0, BLACK_FRIDAY_END - Date.now());
+    if (left === 0) { clearInterval(timer); applyBlackFriday(); updateWhatsAppLinks(); return; }
+    const s = Math.floor(left / 1000);
+    const parts = { d: Math.floor(s / 86400), h: Math.floor(s / 3600) % 24, m: Math.floor(s / 60) % 60, s: s % 60 };
+    boxes.forEach((box) => {
+      box.querySelectorAll('[data-cd]').forEach((b) => { b.textContent = pad(parts[b.dataset.cd]); });
+    });
+  };
+  const timer = setInterval(tick, 1000);
+  tick();
+}
 
 const waLink = (text) => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`;
 
@@ -239,6 +289,7 @@ function applySiteLang(lang) {
 
   updateWhatsAppLinks();
   updateFormLinks();
+  updateYearlySavings();
   store.set('yv-lang', siteLang);
 }
 
@@ -281,6 +332,8 @@ function updateWhatsAppLinks() {
 
 /* ---------- Init ---------- */
 document.addEventListener('DOMContentLoaded', () => {
+  if (applyBlackFriday()) startCountdown();
+
   // Idioma: ?lang=es > preferência salva > português
   const param = new URLSearchParams(location.search).get('lang');
   const initial = param || store.get('yv-lang') || 'pt';

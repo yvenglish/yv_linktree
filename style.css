@@ -437,3 +437,47 @@ h1 em,h2 em{font-style:italic;font-weight:600;color:var(--orange-2)}
 .plans.theme-es .plan-main .feats li:before{color:var(--es-main)}
 .plans.theme-es .plan-main .btn-primary{background:var(--es-main);color:var(--es-text);box-shadow:0 14px 34px rgba(217,103,69,.35)}
 .plans.theme-es .plan-main .btn-primary:hover{background:#c55a3a}
+
+/* =========================================================
+   Black Friday (some sozinha depois de 30/11 — ver script.js)
+   ========================================================= */
+.bf-off .bf-only{display:none!important}
+.bf-hero{display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:#0d0712;color:#fff;border-radius:20px;padding:14px 18px;margin-bottom:22px;box-shadow:0 18px 40px rgba(13,7,18,.28);border:1px solid rgba(255,189,122,.25);position:relative;overflow:hidden;transition:transform .2s}
+.bf-hero:hover{transform:translateY(-2px)}
+.bf-hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 100% 0%,rgba(225,121,34,.35),transparent 55%);pointer-events:none}
+.bf-hero>*{position:relative}
+.bf-hero-tag{background:var(--orange-2);color:#fff;font-weight:900;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;border-radius:999px;padding:7px 12px;white-space:nowrap}
+.bf-hero-text{display:flex;flex-direction:column;gap:2px;flex:1 1 240px;min-width:0}
+.bf-hero-text strong{font-size:1.05rem}
+.bf-hero-text small{color:#d9cee3;font-size:.82rem}
+.countdown{display:flex;gap:6px}
+.countdown>span{display:flex;flex-direction:column;align-items:center;min-width:46px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:6px 4px}
+.countdown b{font-family:var(--serif);font-size:1.3rem;line-height:1;font-variant-numeric:tabular-nums;color:var(--peach)}
+.countdown small{font-size:.62rem;text-transform:uppercase;letter-spacing:.08em;color:#cfc2da;margin-top:3px}
+
+.bf-plans{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;margin:0 auto 18px;max-width:760px;background:rgba(0,0,0,.35);border:1px solid rgba(255,189,122,.3);border-radius:20px;padding:14px 20px}
+.bf-plans p{margin:0;color:#fff!important;font-size:.98rem;text-align:center}
+.bf-plans strong{color:var(--peach)}
+.countdown-sm>span{min-width:42px;padding:5px 3px}
+.countdown-sm b{font-size:1.1rem}
+
+.price-old{display:flex;align-items:center;gap:8px;margin:0 0 6px;flex-wrap:wrap}
+.price-old s{opacity:.6;font-weight:600;font-size:1rem}
+.bf-tag{background:#0d0712;color:var(--peach);font-size:.64rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;border-radius:999px;padding:5px 9px;border:1px solid rgba(255,189,122,.35)}
+.save{background:var(--orange-2);color:#fff;font-weight:800;font-size:.78rem;border-radius:999px;padding:4px 9px}
+.plans.theme-es .save{background:var(--es-main)}
+.plans.theme-es .bf-plans strong,.plans.theme-es .countdown b{color:var(--es-accent)}
+
+@media (max-width:640px){
+  .bf-hero{padding:12px 14px;gap:12px}
+  .bf-hero .countdown{width:100%;justify-content:space-between}
+  .bf-hero .countdown>span{flex:1}
+  .bf-plans{padding:14px}
+}
+.bf-year{margin:8px 0 0;font-size:.85rem;color:#e6dcee}
+.bf-year strong{color:var(--peach)}
+.plan-main .bf-year{color:var(--muted)}
+.plan-main .bf-year strong{color:var(--orange)}
+.plans.theme-es .bf-year strong{color:var(--es-accent)}
+.plans.theme-es .plan-main .bf-year{color:#7a5a5e}
+.plans.theme-es .plan-main .bf-year strong{color:var(--es-main)}
