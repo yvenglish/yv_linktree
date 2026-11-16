@@ -474,7 +474,7 @@ h1 em,h2 em{font-style:italic;font-weight:600;color:var(--orange-2)}
 /* Selo no botão "Ver planos" do hero + contagem embaixo */
 .hero-ctas{align-items:flex-start}
 .cta-bf{display:flex;flex-direction:column;align-items:center;gap:8px}
-.btn-bf{position:relative;border-color:var(--orange-2)}
+.btn-bf{position:relative}
 .btn-bf-tag{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:#0d0712;color:var(--peach);font-size:.62rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;border-radius:999px;padding:4px 10px;white-space:nowrap;box-shadow:0 6px 14px rgba(13,7,18,.25)}
 .bf-timer{font-size:.8rem;font-weight:600;color:var(--muted);white-space:nowrap}
 .bf-timer b{font-variant-numeric:tabular-nums;color:var(--orange);font-weight:800}
@@ -482,4 +482,22 @@ h1 em,h2 em{font-style:italic;font-weight:600;color:var(--orange-2)}
   .cta-bf{width:100%}
   .hero-ctas .cta-bf .btn{width:100%}
   .hero-ctas{gap:18px}
+}
+
+/* Faixa de Black Friday no início do hero (só no computador) */
+.bf-hero{display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:#0d0712;color:#fff;border-radius:20px;padding:14px 18px;margin-bottom:22px;box-shadow:0 18px 40px rgba(13,7,18,.28);border:1px solid rgba(255,189,122,.25);position:relative;overflow:hidden;transition:transform .2s}
+.bf-hero:hover{transform:translateY(-2px)}
+.bf-hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 100% 0%,rgba(225,121,34,.35),transparent 55%);pointer-events:none}
+.bf-hero>*{position:relative}
+.bf-hero-tag{background:var(--orange-2);color:#fff;font-weight:900;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;border-radius:999px;padding:7px 12px;white-space:nowrap}
+.bf-hero-text{display:flex;flex-direction:column;gap:2px;flex:1 1 240px;min-width:0}
+.bf-hero-text strong{font-size:1.05rem}
+.bf-hero-text small{color:#d9cee3;font-size:.82rem}
+
+/* Onde cada versão aparece: faixa no computador; selo + contagem no botão no celular */
+.only-mobile{display:none!important}
+@media (max-width:640px){
+  .only-desktop{display:none!important}
+  .only-mobile{display:revert!important}
+  .btn-bf{border-color:var(--orange-2)}
 }

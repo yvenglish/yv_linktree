@@ -123,6 +123,8 @@ const ES = {
   'plans.per': '/mes',
 
   'bf.ends': 'termina en',
+  'bf.hero.title': 'Ahorra hasta R$ 480 al año',
+  'bf.hero.sub': 'Descuento garantizado mientras estudies con nosotros · inscripciones hasta el 30/11',
   'bf.plans': '🖤 <strong>Black Friday YV:</strong> inscríbete hasta el 30 de noviembre y mantén este precio mientras estudies con nosotros.',
   'bf.d': 'días',
   'bf.h': 'horas',
