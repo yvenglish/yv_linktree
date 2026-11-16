@@ -122,8 +122,7 @@ const ES = {
   'plans.scarcity': '📅 <strong>Agenda limitada:</strong> al ser clases particulares, los horarios se llenan por orden de inscripción.',
   'plans.per': '/mes',
 
-  'bf.hero.title': 'Ahorra hasta R$ 480 al año',
-  'bf.hero.sub': 'Descuento garantizado mientras estudies con nosotros · inscripciones hasta el 30/11',
+  'bf.ends': 'termina en',
   'bf.plans': '🖤 <strong>Black Friday YV:</strong> inscríbete hasta el 30 de noviembre y mantén este precio mientras estudies con nosotros.',
   'bf.d': 'días',
   'bf.h': 'horas',
